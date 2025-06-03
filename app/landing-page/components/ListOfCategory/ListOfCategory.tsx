@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { supabase } from '@/app/lib/supabase';
+import Link from 'next/link';
 
 type Skill = {
   skill: string;
@@ -104,24 +105,24 @@ export default function ListOfCategory() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4">
               <div className="space-y-4">
                 {firstColumnSkills.map((skill) => (
-                  <a 
+                  <Link 
                     key={skill.skill}
-                    href={`/search?skill=${encodeURIComponent(skill.skill)}`}
+                    href={`/categories/${encodeURIComponent(skill.skill)}`}
                     className="block text-body hover:text-green-hover transition-colors"
                   >
                     {skill.skill}
-                  </a>
+                  </Link>
                 ))}
               </div>
               <div className="space-y-4">
                 {secondColumnSkills.map((skill) => (
-                  <a 
+                  <Link 
                     key={skill.skill}
-                    href={`/search?skill=${encodeURIComponent(skill.skill)}`}
+                    href={`/categories/${encodeURIComponent(skill.skill)}`}
                     className="block text-body hover:text-green-hover transition-colors"
                   >
                     {skill.skill}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>

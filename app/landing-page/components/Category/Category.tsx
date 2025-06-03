@@ -114,7 +114,7 @@ export default function Category() {
             {categories.map((category) => (
               <Link 
                 key={category.id}
-                href={`/category/${category.slug}`}
+                href={`/categories/${encodeURIComponent(category.title)}`}
                 className="bg-green-light rounded-lg p-6 hover:shadow-md transition-shadow"
               >
                 <div className="flex flex-col space-y-2">
